@@ -60,6 +60,12 @@ The results are then written to a markdown file for easier reading.
 Right now OpenAI is in the audio analysis, not currently used but is there if someone wants to use it, just remember to provide an API key for it.
 We have metadata analysis both for audio and video.
 
+## Spectrum Analysis
+
+Spectrum analysis is used to see if the file has been manipulated. Has a script for creating this image on run. 
+
+![ml](https://github.com/user-attachments/assets/80cfe116-8e4a-41cf-b870-1b70aed28ce9)
+
 ## Machine Learning Model
 
 Deepfake flac files are used from ASVspoof2021_DF sample, part00. 
