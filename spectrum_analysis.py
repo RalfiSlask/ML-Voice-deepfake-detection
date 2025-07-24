@@ -111,7 +111,7 @@ def full_audio_analysis(file_path):
     plt.tight_layout()
     plt.show()
 
-file_path = r"C:\Users\nilss\Desktop\sound-detection\assets\sounds\inspelning.wav"
+file_path = r"C:\Users\nilss\Desktop\deepfake-detection\assets\sounds\inspelning.m4a"
 
 if os.path.exists(file_path):
     full_audio_analysis(file_path)

@@ -6,33 +6,6 @@ from pydub import AudioSegment
 from pymediainfo import MediaInfo
 import subprocess
 import os
-import openai
-
-# OpenAI API key
-openai.api_key = ""
-
-# This is currently not used, but it is there if someone wants to use it
-# Analyze metadata using OpenAI API to detect anomalies or AI generation
-def analyze_with_openai(metadata):
-    # We tell the AI that it should analyze the metadata and then draw a conclusion based on if the file is AI-generated or tampered with
-    prompt = f"""
-    The following is metadata from an audio file. Analyze the metadata to determine if the audio file might be AI-generated or tampered with. Provide reasoning and a conclusion.
-
-    Metadata:
-    {metadata}
-
-    Analysis:
-    """
-    try:
-        response = openai.Completion.create(
-            engine="gpt-4",  
-            prompt=prompt,
-            max_tokens=300,
-            temperature=0.5
-        )
-        return response.choices[0].text.strip()
-    except Exception as e:
-        return f"OpenAI analysis failed: {e}"
 
 ## In here we will analyze the metadata of the audio file to detect if the file has been manipulated
 
@@ -126,8 +99,8 @@ def full_metadata_analysis(file_path, output_path):
             file.write(f"ExifTool analysis failed: {e}\n")
         file.write("\n")
 
-file_path_mp3 = r"C:\Users\nilss\Desktop\sound-detection\assets\sounds\inspelning.mp3"
-output_file_path = r"C:\Users\nilss\Desktop\sound-detection\metadata_output.md"
+file_path_mp3 = r"C:\Users\nilss\Desktop\deepfake-detection\assets\sounds\inspelning.wav"
+output_file_path = r"C:\Users\nilss\Desktop\deepfake-detection\metadata_output.md"
 
 # Does the file exist?
 if os.path.exists(file_path_mp3):

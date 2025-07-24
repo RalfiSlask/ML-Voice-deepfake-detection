@@ -18,6 +18,7 @@ sound_detection_env\Scripts\activate
 ## Install dependencies
 
 Main dependencies:
+
 - tensorflow==2.12.0
 - numpy==1.23.5
 - librosa==0.10.2.post1
@@ -60,9 +61,15 @@ The results are then written to a markdown file for easier reading.
 Right now OpenAI is in the audio analysis, not currently used but is there if someone wants to use it, just remember to provide an API key for it.
 We have metadata analysis both for audio and video.
 
+## Spectrum Analysis
+
+Spectrum analysis is used to see if the file has been manipulated. Has a script for creating this image on run.
+
+![ml](https://github.com/user-attachments/assets/80cfe116-8e4a-41cf-b870-1b70aed28ce9)
+
 ## Machine Learning Model
 
-Deepfake flac files are used from ASVspoof2021_DF sample, part00. 
+Deepfake flac files are used from ASVspoof2021_DF sample, part00.
 link: https://www.asvspoof.org/index2021.html
 
 Make sure to also download the keys and trial_metadata if not provided in the repo. Make a folder called `keys` and put the files in there.
@@ -74,8 +81,8 @@ If one wants to have a custom dataset, make sure all paths are updated in the `m
 - `best_model.h5` - This model might be overfitted and not very good, so proceed with caution
 
 ## Notes
+
 - Make sure to have Python 3.8 or later installed
 - For video analysis, ensure you have ExifTool installed and update the path in `video_metadata.py`
 - Audio files should be in WAV or MP3 format
 - Video files should be in MP4 format
-
